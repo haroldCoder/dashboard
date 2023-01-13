@@ -8,7 +8,7 @@ export default function Home() {
         <div className='grid gap-6 grid-cols-1'>
             {
                 data.map(e=>(
-                    <div className='bg-gray-600 w-72 h-20 rounded-md py-1 px-4'>
+                    <div className='bg-gray-600 w-72 h-20 rounded-md py-1 px-4' key={e.name}>
                         <h2 className='text-blue-500'>{e.name}</h2>
                         <div className='flex'>
                             <section className='flex flex-col'>
@@ -24,6 +24,12 @@ export default function Home() {
             }
             </div>
             <Login logp={true} post={true}/>
+            <>
+            <div className='ml-20' style={{position: "absolute", left: "80%"}}>
+                <h2 className='text-3xl text-center text-green-600'>{data.length}</h2>
+                <p className='text-white'>Users</p>
+            </div>
+            </>
     </div>
   )
 }
